@@ -59,7 +59,7 @@
             android:layout_marginEnd="@dimen/dimen16" />
 
         <Button
-            android:id="@+id/button_reclamações"
+            android:id="@+id/button_reclamacoes"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_margin="@dimen/dimen16"
