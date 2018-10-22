@@ -17,7 +17,7 @@ class UltimaSenhaAdapter (var mLista: ArrayList<UltimaSenha>,
 
         val view : View = LayoutInflater.from(p0.context).inflate(R.layout.item_ultima_senha,p0,false)
 
-        return MyViewHolder(view = view)
+        return MyViewHolder(view)
 
     }
 

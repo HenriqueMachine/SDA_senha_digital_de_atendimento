@@ -53,7 +53,6 @@ class HomeFragment : Fragment(), HomeContract.UserView {
         button_documentos.setOnClickListener { gerarSenha(DOCUMENTOS) }
         button_assuntosgerais.setOnClickListener { gerarSenha(ASSUNTOS_GERAIS) }
 
-
     }
 
     fun gerarSenha(topico:String){

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Senhadigitaldeatendimento</string>
+    <string name="app_name">SDA</string>
     <string name="title_home">Ínicio</string>
     <string name="title_painel">Painel</string>
     <string name="title_historico">Histórico</string>
