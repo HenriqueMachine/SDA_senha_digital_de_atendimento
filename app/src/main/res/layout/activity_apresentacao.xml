@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.BemvindoInitial.ApresentacaoActivity"
+    android:orientation="vertical"
+    android:background="@drawable/fotoverde">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#e0000000">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SDA"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dimen16"
+            android:textStyle="italic|bold"
+            android:textSize="50dp"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/text_sda_telaapres"
+            android:layout_gravity="center"
+            android:layout_marginBottom="150dp"
+            android:layout_marginLeft="@dimen/dimen16"
+            android:layout_marginRight="@dimen/dimen16"
+            android:textStyle="italic"
+            android:textSize="@dimen/dimen_20sp"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dimen16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shapebuttonstroke"
+            android:text="Entrar"
+            android:textColor="@color/colorAccent"/>
+
+        <Button
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/dimen16"
+            android:layout_marginLeft="@dimen/dimen16"
+            android:layout_marginBottom="@dimen/dimen16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shapebuttonstroke"
+            android:text="Cadastrar"
+            android:textColor="@color/colorAccent"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="SOU UM PARCEIRO"/>
+
+    </LinearLayout>
+
+</LinearLayout>

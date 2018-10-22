@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Home.HomeFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textview_bemvindo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen16"
+        android:layout_marginBottom="@dimen/dimen8"
+        android:layout_marginRight="@dimen/dimen16"
+        android:layout_marginLeft="@dimen/dimen16"
+        android:text="Olá, usuario!"
+        android:textSize="25dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textview_apres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen16"
+        android:layout_marginRight="@dimen/dimen16"
+        android:text="@string/text_bemvindo"
+        android:textSize="@dimen/dimen16"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textview_escolha"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen16"
+        android:layout_marginRight="@dimen/dimen16"
+        android:textStyle="bold"
+        android:text="Escolha um tipo de senha:"
+        android:textSize="@dimen/dimen16"
+        android:textColor="@android:color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_transporte"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/dimen16"
+            android:layout_marginRight="@dimen/dimen16"
+            android:background="@drawable/shapebuttonmenu"
+            android:text="transporte"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="@dimen/dimen16" />
+
+        <Button
+            android:id="@+id/button_reclamações"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_margin="@dimen/dimen16"
+            android:layout_weight="1"
+            android:text="reclamações"
+            android:textColor="@android:color/white"
+            android:background="@drawable/shapebuttonmenu"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_notasefaltas"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/dimen16"
+            android:background="@drawable/shapebuttonmenu"
+            android:layout_marginEnd="@dimen/dimen16"
+            android:text="Notas/Faltas"
+            android:textColor="@android:color/white"
+            android:layout_margin="@dimen/dimen16"/>
+
+        <Button
+            android:id="@+id/button_documentos"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/dimen16"
+            android:text="Documentos"
+            android:textColor="@android:color/white"
+            android:background="@drawable/shapebuttonmenu"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_assuntosgerais"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="@dimen/dimen16"
+        android:text="assuntos gerais"
+        android:textColor="@android:color/white"
+        android:background="@drawable/shapebuttonmenu"/>
+
+</LinearLayout>
