@@ -9,7 +9,11 @@ import android.view.ViewGroup
 
 import com.senhadigitaldeatendimento.R
 
-class PainelFragment : Fragment() {
+class PainelFragment : Fragment(), PainelContract.UserView {
+
+    private val presenter : PainelContract.UserActionsListener<PainelContract.UserView> by lazy {
+        PainelPresenter(activity,this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

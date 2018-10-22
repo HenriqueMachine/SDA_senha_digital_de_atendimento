@@ -9,7 +9,11 @@ import android.view.ViewGroup
 
 import com.senhadigitaldeatendimento.R
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), HomeContract.UserView {
+
+    private val presenter : HomeContract.UserActionsListener<HomeContract.UserView> by lazy {
+        HomePresenter(activity, this)
+    }
 
     companion object {
         fun newInstance(): HomeFragment {

@@ -9,7 +9,10 @@ import android.view.ViewGroup
 
 import com.senhadigitaldeatendimento.R
 
-class HistoricoFragment : Fragment() {
+class HistoricoFragment : Fragment(), HistoricoSenhasContract.UserView {
+
+    private val presenter: HistoricoSenhasContract.UserActionsListener<HistoricoSenhasContract.UserView> by lazy {
+        HistoricoSenhasPresenter(activity, this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
