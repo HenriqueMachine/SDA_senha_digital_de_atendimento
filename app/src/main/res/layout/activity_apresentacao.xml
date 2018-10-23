@@ -39,6 +39,7 @@
             android:textColor="@android:color/white"/>
 
         <Button
+            android:id="@+id/button_entrar"
             android:layout_gravity="center"
             android:layout_margin="@dimen/dimen16"
             android:layout_width="match_parent"
@@ -48,6 +49,7 @@
             android:textColor="@color/colorAccent"/>
 
         <Button
+            android:id="@+id/button_cadastrar"
             android:layout_gravity="center"
             android:layout_marginRight="@dimen/dimen16"
             android:layout_marginLeft="@dimen/dimen16"

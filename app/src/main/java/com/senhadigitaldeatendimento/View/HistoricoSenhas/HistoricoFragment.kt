@@ -3,18 +3,26 @@ package com.senhadigitaldeatendimento.View.HistoricoSenhas
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.GridLayout
+import com.senhadigitaldeatendimento.Model.UltimaSenha
 
 import com.senhadigitaldeatendimento.R
+import com.senhadigitaldeatendimento.Support.Adapters.HistoricoAdapter
+import com.senhadigitaldeatendimento.Support.Adapters.UltimaSenhaAdapter
 import kotlinx.android.synthetic.main.fragment_historico.*
+import kotlinx.android.synthetic.main.fragment_painel.*
 
 class HistoricoFragment : Fragment(), HistoricoSenhasContract.UserView {
 
     private val presenter: HistoricoSenhasContract.UserActionsListener<HistoricoSenhasContract.UserView> by lazy {
         HistoricoSenhasPresenter(activity, this) }
+
+    private var adapter: HistoricoAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,5 +34,24 @@ class HistoricoFragment : Fragment(), HistoricoSenhasContract.UserView {
         return inflater.inflate(R.layout.fragment_historico, container, false)
 
     }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        presenter.historicoSet()
+
+    }
+
+    override fun obterHistorico(list: ArrayList<UltimaSenha>) {
+
+        recyclerview_historico.layoutManager = LinearLayoutManager( activity,
+                LinearLayoutManager.VERTICAL,
+                false
+        )
+        adapter = HistoricoAdapter(list, this.activity!!)
+        recyclerview_historico.adapter = adapter
+
+    }
+
 
 }

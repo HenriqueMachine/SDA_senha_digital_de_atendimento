@@ -9,12 +9,14 @@ interface PainelContract {
     interface UserView: View {
 
         fun setList(list:ArrayList<UltimaSenha>)
+        fun lastSenha(ultimaSenha: String)
 
     }
 
     interface UserActionsListener < T : View> : Presenter<T> {
 
         fun lastPasswords()
+        fun getLastSenha()
 
     }
 

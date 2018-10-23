@@ -16,17 +16,18 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".View.MainActivityBottomNav.BottomNavigationActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"></activity>
+        <activity android:name=".View.BemvindoInitial.ApresentacaoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".View.BemvindoInitial.ApresentacaoActivity" />
         <activity
             android:name=".View.Login.LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
+        <activity android:name=".View.Register.RegisterActivity"></activity>
     </application>
 
 </manifest>

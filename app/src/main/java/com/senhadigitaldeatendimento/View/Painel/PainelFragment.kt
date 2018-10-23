@@ -13,13 +13,14 @@ import com.senhadigitaldeatendimento.R
 import com.senhadigitaldeatendimento.Support.Adapters.UltimaSenhaAdapter
 import kotlinx.android.synthetic.main.fragment_painel.*
 
-@Suppress("UNREACHABLE_CODE")
 class PainelFragment : Fragment(), PainelContract.UserView {
 
     private val presenter : PainelContract.UserActionsListener<PainelContract.UserView> by lazy {
         PainelPresenter(activity,this)
     }
     private var adapter:UltimaSenhaAdapter? = null
+
+    private var senha = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,18 +31,33 @@ class PainelFragment : Fragment(), PainelContract.UserView {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_painel, container, false)
+        val view = inflater.inflate(R.layout.fragment_painel, container, false)
 
+        return view
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        presenter.lastPasswords()
+        presenter.getLastSenha()
     }
 
     override fun setList(list: ArrayList<UltimaSenha>) {
 
         recyclerview_table1.layoutManager = GridLayoutManager( activity, 2,
-                GridLayoutManager.HORIZONTAL,
+                GridLayoutManager.VERTICAL,
                 false
         )
         adapter = UltimaSenhaAdapter(list, this.activity!!)
         recyclerview_table1.adapter = adapter
+
+    }
+
+    override fun lastSenha(ultimaSenha: String) {
+
+        textview_senha.text = ultimaSenha
+
 
     }
 

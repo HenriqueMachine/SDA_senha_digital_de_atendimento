@@ -17,6 +17,8 @@ class BottomNavigationActivity : AppCompatActivity() {
 
     private var content: FrameLayout? = null
 
+    private var controlInflate = false
+
     private val mOnNavigationItemSelectedListener = object : BottomNavigationView.OnNavigationItemSelectedListener {
 
         override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -65,9 +67,14 @@ class BottomNavigationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        var view = findViewById<BottomNavigationView>(R.id.navigation)
+
+        view.menu.getItem(2).isChecked = true
+
         content = findViewById(R.id.content) as FrameLayout
         val navigation = findViewById(R.id.navigation) as BottomNavigationView
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
 
 
         val fragment = HomeFragment.newInstance()
