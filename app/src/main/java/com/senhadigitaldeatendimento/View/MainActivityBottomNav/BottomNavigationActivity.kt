@@ -17,36 +17,68 @@ class BottomNavigationActivity : AppCompatActivity() {
 
     private var content: FrameLayout? = null
 
-    private var controlInflate = false
+    private var controlInflate:Int? = null
 
     private val mOnNavigationItemSelectedListener = object : BottomNavigationView.OnNavigationItemSelectedListener {
 
         override fun onNavigationItemSelected(item: MenuItem): Boolean {
             when (item.itemId) {
                 R.id.navigation_home -> {
-                    val fragment = HomeFragment.newInstance()
-                    addFragment(fragment)
-                    return true
+
+                    if (controlInflate != 0){
+                        controlInflate = 0
+
+                        val fragment = HomeFragment.newInstance()
+                        addFragment(fragment)
+                        return true
+
+                    }
+
                 }
                 R.id.navigation_dashboard -> {
-                    val fragment = PainelFragment()
-                    addFragment(fragment)
-                    return true
+
+                    if (controlInflate != 1){
+                        controlInflate = 1
+
+                        val fragment = PainelFragment()
+                        addFragment(fragment)
+                        return true
+
+                    }
+
                 }
                 R.id.navigation_notifications -> {
-                    var fragment = HistoricoFragment()
-                    addFragment(fragment)
-                    return true
+
+                    if (controlInflate != 2){
+                        controlInflate = 2
+
+                        var fragment = HistoricoFragment()
+                        addFragment(fragment)
+                        return true
+
+                    }
                 }
                 R.id.navigation_menu -> {
-                    var fragment = MenuFragment()
-                    addFragment(fragment)
-                    return true
+
+                    if (controlInflate != 3){
+                        controlInflate = 3
+
+                        val fragment = MenuFragment()
+                        addFragment(fragment)
+                        return true
+
+                    }
                 }
                 R.id.navigation_outros ->{
-                    var fragment = OutrosFragment()
-                    addFragment(fragment)
-                    return true
+
+                    if (controlInflate != 4){
+                        controlInflate = 4
+
+                        val fragment = OutrosFragment()
+                        addFragment(fragment)
+                        return true
+
+                    }
                 }
             }
             return false
