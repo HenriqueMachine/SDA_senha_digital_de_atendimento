@@ -53,17 +53,23 @@ class HomeFragment : Fragment(), HomeContract.UserView {
 
         button_transporte.setOnClickListener {
             gerarSenha(TRANSPORTE)
-            showDialog("Sua senha é", this!!.senhaFrag!!)
+            showDialog("Sua senha é", this.senhaFrag!!)
         }
         button_reclamacoes.setOnClickListener {
             gerarSenha(RECLAMACOES)
+            showDialog("Sua senha é", this.senhaFrag!!)
         }
         button_notasefaltas.setOnClickListener {
-            gerarSenha(NOTAS_E_FALTAS) }
-        button_documentos.setOnClickListener { gerarSenha(DOCUMENTOS)
+            gerarSenha(NOTAS_E_FALTAS)
+            showDialog("Sua senha é", this.senhaFrag!!)
+        }
+        button_documentos.setOnClickListener {
+            gerarSenha(DOCUMENTOS)
+            showDialog("Sua senha é", this.senhaFrag!!)
         }
         button_assuntosgerais.setOnClickListener {
             gerarSenha(ASSUNTOS_GERAIS)
+            showDialog("Sua senha é", this.senhaFrag!!)
         }
 
     }
