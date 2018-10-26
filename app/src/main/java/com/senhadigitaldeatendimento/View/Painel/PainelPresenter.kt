@@ -1,6 +1,7 @@
 package com.senhadigitaldeatendimento.View.Painel
 
 import android.content.Context
+import com.senhadigitaldeatendimento.Model.UltimaSenha
 import com.senhadigitaldeatendimento.Support.Utils.GetSenhas
 
 class PainelPresenter (var context: Context?,
@@ -12,7 +13,7 @@ class PainelPresenter (var context: Context?,
 
         if(list.isNotEmpty()){
 
-            var senhaUltima = "${list.last().topico} ${list.last().numeroSenha}"
+            val senhaUltima = "${list.last().topico} ${list.last().numeroSenha}"
 
             view?.lastSenha(senhaUltima)
 
@@ -23,7 +24,7 @@ class PainelPresenter (var context: Context?,
 
         val list = GetSenhas.getSenhas(context)
 
-        view?.setList(list)
+        view?.setList(list.reversed() as ArrayList<UltimaSenha>)
     }
 
 

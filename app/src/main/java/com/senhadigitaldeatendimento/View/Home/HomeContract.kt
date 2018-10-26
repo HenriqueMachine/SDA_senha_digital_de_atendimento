@@ -10,8 +10,8 @@ interface HomeContract {
 
     interface UserView: View {
 
-        fun showSenha(senha:String)
         fun getLista(list:ArrayList<UltimaSenha>)
+        fun showSenha(senha:String)
 
     }
 

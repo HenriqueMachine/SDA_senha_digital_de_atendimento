@@ -20,7 +20,7 @@ class CustomDialogSenha(var context:Context){
             dialog?.window?.clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM)
             dialog?.setContentView(R.layout.custom_dialog_password)
             dialog?.setCancelable(false)
-            dialog?.window?.attributes?.windowAnimations = R.style.AlertDialog_AppCompat
+            dialog?.window?.attributes?.windowAnimations = R.style.dialog_animation
             dialog?.findViewById<TextView>(R.id.textview_tittle)?.text = tittle
             dialog?.findViewById<TextView>(R.id.textview_desc)?.text = msg
             dialog?.findViewById<Button>(R.id.button_ok)?.setOnClickListener {

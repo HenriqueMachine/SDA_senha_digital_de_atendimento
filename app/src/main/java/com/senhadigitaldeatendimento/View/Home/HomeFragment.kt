@@ -10,14 +10,18 @@ import android.view.ViewGroup
 import com.senhadigitaldeatendimento.Model.UltimaSenha
 
 import com.senhadigitaldeatendimento.R
+import com.senhadigitaldeatendimento.Support.Utils.CustomDialogSenha
 import com.senhadigitaldeatendimento.View.Painel.PainelFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(), HomeContract.UserView {
 
+
     private val presenter : HomeContract.UserActionsListener<HomeContract.UserView> by lazy {
         HomePresenter(activity, this)
     }
+
+    private var senhaFrag:String? = null
 
     private val INTENT_LISTA = "INTENT_LIST"
 
@@ -47,11 +51,20 @@ class HomeFragment : Fragment(), HomeContract.UserView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        button_transporte.setOnClickListener { gerarSenha(TRANSPORTE) }
-        button_reclamacoes.setOnClickListener { gerarSenha(RECLAMACOES) }
-        button_notasefaltas.setOnClickListener { gerarSenha(NOTAS_E_FALTAS) }
-        button_documentos.setOnClickListener { gerarSenha(DOCUMENTOS) }
-        button_assuntosgerais.setOnClickListener { gerarSenha(ASSUNTOS_GERAIS) }
+        button_transporte.setOnClickListener {
+            gerarSenha(TRANSPORTE)
+            showDialog("Sua senha é", this!!.senhaFrag!!)
+        }
+        button_reclamacoes.setOnClickListener {
+            gerarSenha(RECLAMACOES)
+        }
+        button_notasefaltas.setOnClickListener {
+            gerarSenha(NOTAS_E_FALTAS) }
+        button_documentos.setOnClickListener { gerarSenha(DOCUMENTOS)
+        }
+        button_assuntosgerais.setOnClickListener {
+            gerarSenha(ASSUNTOS_GERAIS)
+        }
 
     }
 
@@ -61,15 +74,32 @@ class HomeFragment : Fragment(), HomeContract.UserView {
 
     }
 
-    override fun showSenha(senha:String) {
-
-
-    }
-
     override fun getLista(list: ArrayList<UltimaSenha>) {
 
         val intent = Intent(context, PainelFragment::class.java)
         intent.putExtra(INTENT_LISTA,list)
+
+    }
+
+    fun showDialog(tittle:String, body:String){
+
+        CustomDialogSenha(this.context!!).showDialogPassword(tittle,body,
+                object:CustomDialogSenha.onClickListenerPass{
+                    override fun goToPassword() {
+
+                    }
+
+                    override fun closeDialog() {
+
+                    }
+
+                })
+
+    }
+
+    override fun showSenha(senha: String) {
+
+        senhaFrag = senha
 
     }
 

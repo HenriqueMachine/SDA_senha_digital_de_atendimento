@@ -1,19 +1,26 @@
 package com.senhadigitaldeatendimento.View.MainActivityBottomNav
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
+import android.support.v4.view.GravityCompat
 import android.support.v7.app.AppCompatActivity
+import android.view.Gravity
 import android.view.MenuItem
 import android.widget.FrameLayout
 import com.senhadigitaldeatendimento.R
+import com.senhadigitaldeatendimento.Support.Utils.GetSenhas
+import com.senhadigitaldeatendimento.View.BemvindoInitial.ApresentacaoActivity
 import com.senhadigitaldeatendimento.View.HistoricoSenhas.HistoricoFragment
 import com.senhadigitaldeatendimento.View.Home.HomeFragment
 import com.senhadigitaldeatendimento.View.Menu.MenuFragment
 import com.senhadigitaldeatendimento.View.Outros.OutrosFragment
 import com.senhadigitaldeatendimento.View.Painel.PainelFragment
+import kotlinx.android.synthetic.main.activity_menu.*
 
-class BottomNavigationActivity : AppCompatActivity() {
+class BottomNavigationActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
 
     private var content: FrameLayout? = null
 
@@ -60,14 +67,15 @@ class BottomNavigationActivity : AppCompatActivity() {
                 }
                 R.id.navigation_menu -> {
 
-                    if (controlInflate != 3){
-                        controlInflate = 3
-
-                        val fragment = MenuFragment()
-                        addFragment(fragment)
-                        return true
-
-                    }
+//                    if (controlInflate != 3){
+//                        controlInflate = 3
+//
+//                        val fragment = MenuFragment()
+//                        addFragment(fragment)
+//                        return true
+//
+//                    }
+                    drawer_layout.openDrawer(Gravity.END)
                 }
                 R.id.navigation_outros ->{
 
@@ -107,10 +115,37 @@ class BottomNavigationActivity : AppCompatActivity() {
         val navigation = findViewById(R.id.navigation) as BottomNavigationView
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-
+        nav_view.setNavigationItemSelectedListener(this)
 
         val fragment = HomeFragment.newInstance()
         addFragment(fragment)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        // Handle navigation view item clicks here.
+        when (item.itemId) {
+            R.id.nav_exit -> {
+
+                GetSenhas.removeSharedPref(this)
+
+                val intent = Intent(this, ApresentacaoActivity::class.java)
+                startActivity(intent)
+
+
+            }
+            R.id.nav_manage -> {
+
+            }
+            R.id.nav_share -> {
+
+            }
+            R.id.nav_send -> {
+
+            }
+        }
+
+        drawer_layout.closeDrawer(GravityCompat.START)
+        return true
     }
 
 }
