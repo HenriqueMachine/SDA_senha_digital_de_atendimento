@@ -33,8 +33,8 @@ class HomeFragment : Fragment(), HomeContract.UserView {
 
     companion object {
         fun newInstance(): HomeFragment {
-            var fragmentHome = HomeFragment()
-            var args = Bundle()
+            val fragmentHome = HomeFragment()
+            val args = Bundle()
             fragmentHome.arguments = args
             return fragmentHome
         }

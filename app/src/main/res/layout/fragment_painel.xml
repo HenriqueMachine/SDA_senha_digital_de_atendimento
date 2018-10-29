@@ -17,11 +17,11 @@
             android:id="@+id/textview_senha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="S 108"
+            android:text=""
             android:gravity="center"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:textSize="90dp"/>
+            android:textSize="90sp"/>
     </LinearLayout>
 
     <TextView

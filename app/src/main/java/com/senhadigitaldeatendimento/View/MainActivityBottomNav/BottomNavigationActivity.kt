@@ -131,7 +131,6 @@ class BottomNavigationActivity : AppCompatActivity(),NavigationView.OnNavigation
                 val intent = Intent(this, ApresentacaoActivity::class.java)
                 startActivity(intent)
 
-
             }
             R.id.nav_manage -> {
 
@@ -144,8 +143,12 @@ class BottomNavigationActivity : AppCompatActivity(),NavigationView.OnNavigation
             }
         }
 
-        drawer_layout.closeDrawer(GravityCompat.START)
+        //drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    override fun onBackPressed() {
+
     }
 
 }

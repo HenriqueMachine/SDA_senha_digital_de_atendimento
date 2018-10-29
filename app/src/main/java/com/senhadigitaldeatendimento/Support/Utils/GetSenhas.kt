@@ -48,7 +48,7 @@ object GetSenhas {
     fun removeSharedPref(context: Context?){
 
         sp = context?.getSharedPreferences(SENHAS_LIST, Context.MODE_PRIVATE)?.edit()
-        sp?.remove(SENHAS_LIST)
+        sp?.remove(ULTIMAS_SENHAS)
 
         sp?.apply()
     }

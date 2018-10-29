@@ -24,7 +24,12 @@ class PainelPresenter (var context: Context?,
 
         val list = GetSenhas.getSenhas(context)
 
-        view?.setList(list.reversed() as ArrayList<UltimaSenha>)
+        if(list.isNotEmpty()){
+
+            view?.setList(list.reversed() as ArrayList<UltimaSenha>)
+
+        }
+
     }
 
 
