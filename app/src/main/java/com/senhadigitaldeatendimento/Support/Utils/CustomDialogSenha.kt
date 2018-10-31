@@ -13,7 +13,11 @@ class CustomDialogSenha(var context:Context){
 
     var dialog: Dialog? = null
 
-    fun showDialogPassword(tittle:String,msg:String, listern:onClickListenerPass){
+    fun showDialogPassword(tittle:String,
+                           msg:String,
+                           categoria:String,
+                           horario:String,
+                           listern:onClickListenerPass){
 
             dialog = Dialog(context)
             dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -23,6 +27,8 @@ class CustomDialogSenha(var context:Context){
             dialog?.window?.attributes?.windowAnimations = R.style.dialog_animation
             dialog?.findViewById<TextView>(R.id.textview_tittle)?.text = tittle
             dialog?.findViewById<TextView>(R.id.textview_desc)?.text = msg
+            dialog?.findViewById<TextView>(R.id.textview_desc_categoria)?.text = categoria
+            dialog?.findViewById<TextView>(R.id.textview_desc_horario)?.text = horario
             dialog?.findViewById<Button>(R.id.button_ok)?.setOnClickListener {
                 listern.closeDialog()
                 dialog?.dismiss()

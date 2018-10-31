@@ -13,6 +13,8 @@ import com.senhadigitaldeatendimento.R
 import com.senhadigitaldeatendimento.Support.Utils.CustomDialogSenha
 import com.senhadigitaldeatendimento.View.Painel.PainelFragment
 import kotlinx.android.synthetic.main.fragment_home.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class HomeFragment : Fragment(), HomeContract.UserView {
 
@@ -51,25 +53,28 @@ class HomeFragment : Fragment(), HomeContract.UserView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val dateFormat = SimpleDateFormat("HH:mm:ss")
+        val hour =  dateFormat.format(Date())
+
         button_transporte.setOnClickListener {
             gerarSenha(TRANSPORTE)
-            showDialog("Sua senha é", this.senhaFrag!!)
+            showDialog("Atenção", this.senhaFrag!!,"TRANSPORTE",hour)
         }
         button_reclamacoes.setOnClickListener {
             gerarSenha(RECLAMACOES)
-            showDialog("Sua senha é", this.senhaFrag!!)
+            showDialog("Atenção", this.senhaFrag!!,"RECLAMAÇÕES",hour)
         }
         button_notasefaltas.setOnClickListener {
             gerarSenha(NOTAS_E_FALTAS)
-            showDialog("Sua senha é", this.senhaFrag!!)
+            showDialog("Atenção", this.senhaFrag!!,"NOTAS E FALTAS",hour)
         }
         button_documentos.setOnClickListener {
             gerarSenha(DOCUMENTOS)
-            showDialog("Sua senha é", this.senhaFrag!!)
+            showDialog("Atenção", this.senhaFrag!!,"DOCUMENTOS",hour)
         }
         button_assuntosgerais.setOnClickListener {
             gerarSenha(ASSUNTOS_GERAIS)
-            showDialog("Sua senha é", this.senhaFrag!!)
+            showDialog("Atenção", this.senhaFrag!!,"ASSUNTOS GERAIS",hour)
         }
 
     }
@@ -87,9 +92,13 @@ class HomeFragment : Fragment(), HomeContract.UserView {
 
     }
 
-    fun showDialog(tittle:String, body:String){
+    fun showDialog(tittle:String, body:String, category:String, hour:String){
 
-        CustomDialogSenha(this.context!!).showDialogPassword(tittle,body,
+        CustomDialogSenha(this.context!!).showDialogPassword(tittle,
+                body,
+                category,
+                hour,
+
                 object:CustomDialogSenha.onClickListenerPass{
                     override fun goToPassword() {
 
