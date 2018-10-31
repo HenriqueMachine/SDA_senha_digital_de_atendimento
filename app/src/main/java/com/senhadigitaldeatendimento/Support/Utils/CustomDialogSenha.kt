@@ -26,6 +26,7 @@ class CustomDialogSenha(var context:Context){
             dialog?.setCancelable(false)
             dialog?.window?.attributes?.windowAnimations = R.style.dialog_animation
             dialog?.findViewById<TextView>(R.id.textview_tittle)?.text = tittle
+            dialog?.findViewById<TextView>(R.id.textview_pass)?.text = msg
             dialog?.findViewById<TextView>(R.id.textview_desc)?.text = msg
             dialog?.findViewById<TextView>(R.id.textview_desc_categoria)?.text = categoria
             dialog?.findViewById<TextView>(R.id.textview_desc_horario)?.text = horario
