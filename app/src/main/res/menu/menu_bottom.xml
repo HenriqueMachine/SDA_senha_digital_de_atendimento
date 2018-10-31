@@ -21,7 +21,7 @@
     <item
         android:id="@+id/navigation_outros"
         android:icon="@drawable/ic_launcher_background"
-        android:title="@string/title_outro" />
+        android:title="@string/title_mypassword" />
 
     <item
         android:id="@+id/navigation_menu"

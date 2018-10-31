@@ -1,4 +1,4 @@
-package com.senhadigitaldeatendimento.View.Outros
+package com.senhadigitaldeatendimento.View.MinhaSenha
 
 
 import android.os.Bundle
@@ -9,12 +9,12 @@ import android.view.ViewGroup
 
 import com.senhadigitaldeatendimento.R
 
-class OutrosFragment : Fragment() {
+class minhasenhaFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_outros, container, false)
+        return inflater.inflate(R.layout.fragment_minhasenha, container, false)
     }
 
 

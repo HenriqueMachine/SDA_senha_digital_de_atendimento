@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
-import android.support.v4.view.GravityCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.Gravity
 import android.view.MenuItem
@@ -15,8 +14,7 @@ import com.senhadigitaldeatendimento.Support.Utils.GetSenhas
 import com.senhadigitaldeatendimento.View.BemvindoInitial.ApresentacaoActivity
 import com.senhadigitaldeatendimento.View.HistoricoSenhas.HistoricoFragment
 import com.senhadigitaldeatendimento.View.Home.HomeFragment
-import com.senhadigitaldeatendimento.View.Menu.MenuFragment
-import com.senhadigitaldeatendimento.View.Outros.OutrosFragment
+import com.senhadigitaldeatendimento.View.MinhaSenha.minhasenhaFragment
 import com.senhadigitaldeatendimento.View.Painel.PainelFragment
 import kotlinx.android.synthetic.main.activity_menu.*
 
@@ -82,7 +80,7 @@ class BottomNavigationActivity : AppCompatActivity(),NavigationView.OnNavigation
                     if (controlInflate != 4){
                         controlInflate = 4
 
-                        val fragment = OutrosFragment()
+                        val fragment = minhasenhaFragment()
                         addFragment(fragment)
                         return true
 
