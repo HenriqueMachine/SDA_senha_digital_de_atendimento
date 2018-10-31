@@ -34,6 +34,8 @@
             android:layout_gravity="center">
 
             <android.support.design.widget.TextInputLayout
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dimen16">
@@ -42,6 +44,7 @@
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
                     android:hint="@string/prompt_email"
                     android:inputType="text"
                     android:maxLines="1"
@@ -53,6 +56,8 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dimen16">
 
@@ -62,6 +67,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
                     android:imeActionId="6"
+                    android:textColor="@color/colorAccent"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"

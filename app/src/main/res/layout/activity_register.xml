@@ -50,6 +50,8 @@
                 </LinearLayout>
 
                 <android.support.design.widget.TextInputLayout
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorAccent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/dimen16">
@@ -60,6 +62,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Nome"
                         android:inputType="text"
+                        android:textColor="@color/colorAccent"
                         android:maxLines="1"
                         android:singleLine="true"
                         tools:ignore="TextFields"
@@ -68,6 +71,8 @@
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorAccent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/dimen16">
@@ -78,6 +83,7 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/prompt_password"
                         android:imeActionId="6"
+                        android:textColor="@color/colorAccent"
                         android:imeActionLabel="@string/action_sign_in_short"
                         android:imeOptions="actionUnspecified"
                         android:inputType="textPassword"
