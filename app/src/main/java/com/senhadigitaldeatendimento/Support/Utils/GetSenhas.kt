@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.senhadigitaldeatendimento.Model.UltimaSenha
+import com.senhadigitaldeatendimento.Model.Senhas
 
 object GetSenhas {
 
@@ -16,7 +16,7 @@ object GetSenhas {
 
         val list = getSenhas(context)
 
-        list.add(UltimaSenha(topic,senha))
+        list.add(Senhas(topic,senha))
 
         sp = context?.getSharedPreferences(SENHAS_LIST, Context.MODE_PRIVATE)?.edit()
         sp?.putString(ULTIMAS_SENHAS, Gson().toJson(list))
@@ -24,9 +24,9 @@ object GetSenhas {
 
     }
 
-    fun getSenhas(context: Context?):ArrayList<UltimaSenha>{
+    fun getSenhas(context: Context?):ArrayList<Senhas>{
 
-        var list:ArrayList<UltimaSenha> = ArrayList()
+        var list:ArrayList<Senhas> = ArrayList()
 
         val sp = context?.getSharedPreferences(SENHAS_LIST, Context.MODE_PRIVATE)
 
@@ -34,7 +34,7 @@ object GetSenhas {
 
         if (!gson.isNullOrEmpty()){
 
-            val listType = object : TypeToken<ArrayList<UltimaSenha>>() {
+            val listType = object : TypeToken<ArrayList<Senhas>>() {
 
             }.type
 

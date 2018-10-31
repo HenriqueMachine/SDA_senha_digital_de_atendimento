@@ -3,7 +3,7 @@ package com.senhadigitaldeatendimento.Model
 import android.os.Parcel
 import android.os.Parcelable
 
-class UltimaSenha(
+class Senhas(
 
         val topico:String,
         val numeroSenha:Int
@@ -24,12 +24,12 @@ class UltimaSenha(
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<UltimaSenha> {
-        override fun createFromParcel(parcel: Parcel): UltimaSenha {
-            return UltimaSenha(parcel)
+    companion object CREATOR : Parcelable.Creator<Senhas> {
+        override fun createFromParcel(parcel: Parcel): Senhas {
+            return Senhas(parcel)
         }
 
-        override fun newArray(size: Int): Array<UltimaSenha?> {
+        override fun newArray(size: Int): Array<Senhas?> {
             return arrayOfNulls(size)
         }
     }

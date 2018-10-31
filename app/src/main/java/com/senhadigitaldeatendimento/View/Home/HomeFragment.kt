@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.senhadigitaldeatendimento.Model.UltimaSenha
+import com.senhadigitaldeatendimento.Model.Senhas
 
 import com.senhadigitaldeatendimento.R
 import com.senhadigitaldeatendimento.Support.Utils.CustomDialogSenha
@@ -85,7 +85,7 @@ class HomeFragment : Fragment(), HomeContract.UserView {
 
     }
 
-    override fun getLista(list: ArrayList<UltimaSenha>) {
+    override fun getLista(list: ArrayList<Senhas>) {
 
         val intent = Intent(context, PainelFragment::class.java)
         intent.putExtra(INTENT_LISTA,list)

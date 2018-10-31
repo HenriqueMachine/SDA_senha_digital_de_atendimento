@@ -3,19 +3,15 @@ package com.senhadigitaldeatendimento.View.HistoricoSenhas
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridLayout
-import com.senhadigitaldeatendimento.Model.UltimaSenha
+import com.senhadigitaldeatendimento.Model.Senhas
 
 import com.senhadigitaldeatendimento.R
 import com.senhadigitaldeatendimento.Support.Adapters.HistoricoAdapter
-import com.senhadigitaldeatendimento.Support.Adapters.UltimaSenhaAdapter
 import kotlinx.android.synthetic.main.fragment_historico.*
-import kotlinx.android.synthetic.main.fragment_painel.*
 
 class HistoricoFragment : Fragment(), HistoricoSenhasContract.UserView {
 
@@ -42,7 +38,7 @@ class HistoricoFragment : Fragment(), HistoricoSenhasContract.UserView {
 
     }
 
-    override fun obterHistorico(list: ArrayList<UltimaSenha>) {
+    override fun obterHistorico(list: ArrayList<Senhas>) {
 
         recyclerview_historico.layoutManager = LinearLayoutManager( activity,
                 LinearLayoutManager.VERTICAL,

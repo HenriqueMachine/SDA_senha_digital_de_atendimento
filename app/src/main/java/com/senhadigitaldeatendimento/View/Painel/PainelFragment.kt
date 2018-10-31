@@ -7,7 +7,7 @@ import android.support.v7.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.senhadigitaldeatendimento.Model.UltimaSenha
+import com.senhadigitaldeatendimento.Model.Senhas
 
 import com.senhadigitaldeatendimento.R
 import com.senhadigitaldeatendimento.Support.Adapters.UltimaSenhaAdapter
@@ -43,7 +43,7 @@ class PainelFragment : Fragment(), PainelContract.UserView {
         presenter.getLastSenha()
     }
 
-    override fun setList(list: ArrayList<UltimaSenha>) {
+    override fun setList(list: ArrayList<Senhas>) {
 
         recyclerview_table1.layoutManager = GridLayoutManager( activity, 2,
                 GridLayoutManager.VERTICAL,

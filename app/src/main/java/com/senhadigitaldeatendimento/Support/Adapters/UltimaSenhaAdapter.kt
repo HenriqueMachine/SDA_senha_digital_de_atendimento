@@ -5,12 +5,12 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.senhadigitaldeatendimento.Model.UltimaSenha
+import com.senhadigitaldeatendimento.Model.Senhas
 import com.senhadigitaldeatendimento.R
 import com.senhadigitaldeatendimento.Support.Utils.MyViewHolder
 import kotlinx.android.synthetic.main.item_ultima_senha.view.*
 
-class UltimaSenhaAdapter (var mLista: ArrayList<UltimaSenha>,
+class UltimaSenhaAdapter (var mLista: ArrayList<Senhas>,
                           val context:Context) : RecyclerView.Adapter<MyViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): MyViewHolder {
@@ -28,7 +28,7 @@ class UltimaSenhaAdapter (var mLista: ArrayList<UltimaSenha>,
 
     override fun onBindViewHolder(p0: MyViewHolder, p1: Int) {
 
-        val item:UltimaSenha = mLista[p1]
+        val item:Senhas = mLista[p1]
 
         p0.itemView.textview_tipo_senha.text = item.topico
         p0.itemView.textview_numero_senha.text = item.numeroSenha.toString()

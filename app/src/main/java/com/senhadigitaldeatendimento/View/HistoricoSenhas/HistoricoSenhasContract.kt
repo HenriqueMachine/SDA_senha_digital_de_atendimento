@@ -1,6 +1,6 @@
 package com.senhadigitaldeatendimento.View.HistoricoSenhas
 
-import com.senhadigitaldeatendimento.Model.UltimaSenha
+import com.senhadigitaldeatendimento.Model.Senhas
 import com.senhadigitaldeatendimento.Support.Base.Presenter
 import com.senhadigitaldeatendimento.Support.Base.View
 
@@ -8,7 +8,7 @@ interface HistoricoSenhasContract {
 
     interface UserView: View {
 
-        fun obterHistorico(list: ArrayList<UltimaSenha>)
+        fun obterHistorico(list: ArrayList<Senhas>)
 
     }
 

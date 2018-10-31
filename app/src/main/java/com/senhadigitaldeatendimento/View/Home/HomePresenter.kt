@@ -1,11 +1,6 @@
 package com.senhadigitaldeatendimento.View.Home
 
 import android.content.Context
-import android.content.Context.MODE_PRIVATE
-import android.content.SharedPreferences
-import com.google.gson.Gson
-import com.senhadigitaldeatendimento.Model.UltimaSenha
-import com.google.gson.reflect.TypeToken
 import com.senhadigitaldeatendimento.Support.Utils.GetSenhas
 
 class HomePresenter (var context: Context?,
