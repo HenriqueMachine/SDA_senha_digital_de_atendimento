@@ -20,6 +20,7 @@ interface HomeContract {
     interface UserActionsListener < T : View> : Presenter<T> {
 
         fun generatePass(tipoSenha: String)
+        fun saveMyPass (categoria:String, hora:String, senha: String)
 
     }
 

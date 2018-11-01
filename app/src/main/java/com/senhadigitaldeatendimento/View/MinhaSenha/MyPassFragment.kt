@@ -8,14 +8,21 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.senhadigitaldeatendimento.R
+import com.senhadigitaldeatendimento.Support.Utils.GetSenhas
+class MyPassFragment : Fragment(), MyPassContract.UserView {
 
-class minhasenhaFragment : Fragment() {
+    private val presenter : MyPassContract.UserActionsListener<MyPassContract.UserView> by lazy {
+        MyPassPresenter(activity,this)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_minhasenha, container, false)
-    }
 
+        presenter.getMyPass()
+
+        return inflater.inflate(R.layout.fragment_minhasenha, container, false)
+
+    }
 
 }

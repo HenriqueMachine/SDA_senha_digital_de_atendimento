@@ -14,7 +14,7 @@ import com.senhadigitaldeatendimento.Support.Utils.GetSenhas
 import com.senhadigitaldeatendimento.View.BemvindoInitial.ApresentacaoActivity
 import com.senhadigitaldeatendimento.View.HistoricoSenhas.HistoricoFragment
 import com.senhadigitaldeatendimento.View.Home.HomeFragment
-import com.senhadigitaldeatendimento.View.MinhaSenha.minhasenhaFragment
+import com.senhadigitaldeatendimento.View.MinhaSenha.MyPassFragment
 import com.senhadigitaldeatendimento.View.Painel.PainelFragment
 import kotlinx.android.synthetic.main.activity_menu.*
 
@@ -80,7 +80,7 @@ class BottomNavigationActivity : AppCompatActivity(),NavigationView.OnNavigation
                     if (controlInflate != 4){
                         controlInflate = 4
 
-                        val fragment = minhasenhaFragment()
+                        val fragment = MyPassFragment()
                         addFragment(fragment)
                         return true
 

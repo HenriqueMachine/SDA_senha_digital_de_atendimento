@@ -7,6 +7,12 @@ class HomePresenter (var context: Context?,
                      override var view: HomeContract.UserView?) :
         HomeContract.UserActionsListener<HomeContract.UserView> {
 
+    override fun saveMyPass(categoria: String, hora: String, senha: String) {
+
+
+
+    }
+
     private var senha = 0
     private  var senha_topico:String? = null
 

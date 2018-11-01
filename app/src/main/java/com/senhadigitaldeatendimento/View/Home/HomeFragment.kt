@@ -33,6 +33,12 @@ class HomeFragment : Fragment(), HomeContract.UserView {
     private val DOCUMENTOS= "DC"
     private val ASSUNTOS_GERAIS = "AG"
 
+    private val TRANSPORTE_TEXT = "TRANSPORTE"
+    private val RECLAMACOES_TEXT = "RECLAMAÇÕES"
+    private val NOTAS_E_FALTAS_TEXT = "NOTAS E FALTAS"
+    private val DOCUMENTOS_TEXT = "DOCUMENTOS"
+    private val ASSUNTOS_GERAIS_TEXT = "ASSUNTOS GERAIS"
+
     companion object {
         fun newInstance(): HomeFragment {
             val fragmentHome = HomeFragment()
@@ -58,23 +64,28 @@ class HomeFragment : Fragment(), HomeContract.UserView {
 
         button_transporte.setOnClickListener {
             gerarSenha(TRANSPORTE)
-            showDialog("Atenção", this.senhaFrag!!,"TRANSPORTE",hour)
+            showDialog("Atenção", this.senhaFrag!!,TRANSPORTE_TEXT,hour)
+            presenter.saveMyPass(TRANSPORTE_TEXT,hour, senhaFrag!!)
         }
         button_reclamacoes.setOnClickListener {
             gerarSenha(RECLAMACOES)
-            showDialog("Atenção", this.senhaFrag!!,"RECLAMAÇÕES",hour)
+            showDialog("Atenção", this.senhaFrag!!,RECLAMACOES_TEXT,hour)
+            presenter.saveMyPass(RECLAMACOES_TEXT,hour, senhaFrag!!)
         }
         button_notasefaltas.setOnClickListener {
             gerarSenha(NOTAS_E_FALTAS)
-            showDialog("Atenção", this.senhaFrag!!,"NOTAS E FALTAS",hour)
+            showDialog("Atenção", this.senhaFrag!!,NOTAS_E_FALTAS_TEXT,hour)
+            presenter.saveMyPass(NOTAS_E_FALTAS_TEXT,hour, senhaFrag!!)
         }
         button_documentos.setOnClickListener {
             gerarSenha(DOCUMENTOS)
-            showDialog("Atenção", this.senhaFrag!!,"DOCUMENTOS",hour)
+            showDialog("Atenção", this.senhaFrag!!,DOCUMENTOS_TEXT,hour)
+            presenter.saveMyPass(DOCUMENTOS_TEXT,hour, senhaFrag!!)
         }
         button_assuntosgerais.setOnClickListener {
             gerarSenha(ASSUNTOS_GERAIS)
-            showDialog("Atenção", this.senhaFrag!!,"ASSUNTOS GERAIS",hour)
+            showDialog("Atenção", this.senhaFrag!!,ASSUNTOS_GERAIS_TEXT,hour)
+            presenter.saveMyPass(ASSUNTOS_GERAIS_TEXT,hour, senhaFrag!!)
         }
 
     }
