@@ -30,7 +30,7 @@ object GetSenhas {
 
     }
 
-    fun getSenhas(context: Context?):ArrayList<Senhas>{
+    fun getSenhas(context: Context?) : ArrayList<Senhas>{
 
         var list:ArrayList<Senhas> = ArrayList()
 
