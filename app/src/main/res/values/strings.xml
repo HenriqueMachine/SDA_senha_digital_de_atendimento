@@ -31,4 +31,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="text_atendente">Atendente</string>
+    <string name="text_cliente">cliente</string>
+    <string name="prompt_e_mail">E-mail</string>
 </resources>

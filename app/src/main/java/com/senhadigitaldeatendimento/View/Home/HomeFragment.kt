@@ -11,6 +11,7 @@ import com.senhadigitaldeatendimento.Model.Senhas
 
 import com.senhadigitaldeatendimento.R
 import com.senhadigitaldeatendimento.Support.Utils.CustomDialogSenha
+import com.senhadigitaldeatendimento.View.MainActivityBottomNav.BottomNavigationActivity
 import com.senhadigitaldeatendimento.View.Painel.PainelFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.text.SimpleDateFormat
@@ -112,6 +113,8 @@ class HomeFragment : Fragment(), HomeContract.UserView {
 
                 object:CustomDialogSenha.onClickListenerPass{
                     override fun goToPassword() {
+
+                        BottomNavigationActivity.minhaSenha = true
 
                     }
 

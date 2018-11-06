@@ -61,7 +61,7 @@ object GetSenhas {
 
         if (!gson.isNullOrEmpty()){
 
-            val listType = object : TypeToken<ArrayList<Senhas>>() {
+            val listType = object : TypeToken<ArrayList<MinhaSenha>>() {
 
             }.type
 

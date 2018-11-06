@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".View.Register.RegisterActivity"
     android:background="@drawable/fotoverde">
@@ -11,43 +11,56 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#a9000000"
+        android:background="#cc000000"
+        android:orientation="vertical"
         android:gravity="top">
 
-        <ScrollView
+        <LinearLayout
+            android:id="@+id/categoria_usuario"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dimen16"
+            android:layout_marginLeft="@dimen/dimen16"
+            android:layout_marginRight="@dimen/dimen16"
+            android:layout_marginBottom="@dimen/dimen16">
+
+            <Button
+                android:id="@+id/button_atendendente"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/shapebuttonstroke"
+                android:layout_marginRight="@dimen/dimen16"
+                android:text="@string/text_atendente"
+                android:textColor="@color/colorAccent"
+                android:layout_marginEnd="@dimen/dimen16" />
+
+            <Button
+                android:id="@+id/button_cliente"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/shapebuttonstroke"
+                android:textColor="@color/colorAccent"
+                android:text="@string/text_cliente"/>
+
+        </LinearLayout>
+
+        <android.support.v4.widget.NestedScrollView
             android:id="@+id/login_form"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:fadeScrollbars="true">
 
             <LinearLayout
                 android:id="@+id/email_login_form"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="60dp"
                 android:orientation="vertical"
                 android:layout_gravity="center">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_margin="@dimen/dimen16"
-                    android:visibility="gone">
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/dimen16"
-                        android:layout_weight="1"
-                        android:background="@drawable/shapebuttonstroke"
-                        android:layout_marginEnd="@dimen/dimen16" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/shapebuttonstroke"/>
-
-                </LinearLayout>
 
                 <android.support.design.widget.TextInputLayout
                     android:textColor="@color/colorAccent"
@@ -57,7 +70,7 @@
                     android:layout_margin="@dimen/dimen16">
 
                     <EditText
-                        android:id="@+id/email"
+                        android:id="@+id/nome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Nome"
@@ -78,14 +91,104 @@
                     android:layout_margin="@dimen/dimen16">
 
                     <EditText
-                        android:id="@+id/password"
+                        android:id="@+id/email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/prompt_password"
+                        android:hint="@string/prompt_e_mail"
                         android:imeActionId="6"
                         android:textColor="@color/colorAccent"
                         android:imeActionLabel="@string/action_sign_in_short"
                         android:imeOptions="actionUnspecified"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColorHint="@color/colorAccent"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorAccent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen16">
+
+                    <EditText
+                        android:id="@+id/data_nascimento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Data de nascimento"
+                        android:imeActionId="6"
+                        android:textColor="@color/colorAccent"
+                        android:imeActionLabel="@string/action_sign_in_short"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColorHint="@color/colorAccent"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorAccent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen16">
+
+                    <EditText
+                        android:id="@+id/cpf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="CPF"
+                        android:imeActionId="6"
+                        android:textColor="@color/colorAccent"
+                        android:imeActionLabel="@string/action_sign_in_short"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColorHint="@color/colorAccent"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorAccent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen16">
+
+                    <EditText
+                        android:id="@+id/numero_telefone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Número de telefone"
+                        android:imeActionId="6"
+                        android:textColor="@color/colorAccent"
+                        android:imeActionLabel="@string/action_sign_in_short"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColorHint="@color/colorAccent"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/password"
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorAccent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen16">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/prompt_password"
+                        android:textColor="@color/colorAccent"
+                        android:imeActionLabel="@string/action_sign_in_short"
                         android:inputType="textPassword"
                         android:maxLines="1"
                         android:singleLine="true"
@@ -93,8 +196,30 @@
 
                 </android.support.design.widget.TextInputLayout>
 
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/password_confirm"
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorAccent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen16">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Confirmar senha"
+                        android:textColor="@color/colorAccent"
+                        android:imeActionLabel="@string/action_sign_in_short"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColorHint="@color/colorAccent"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+
                 <Button
-                    android:id="@+id/email_sign_in_button"
+                    android:id="@+id/button_cadastrar"
                     android:background="@drawable/shapebuttonstroke"
                     android:textColor="@color/colorAccent"
                     android:layout_width="match_parent"
@@ -104,18 +229,9 @@
                     android:text="Cadastrar"
                     android:textStyle="bold" />
 
-                <ProgressBar
-                    android:id="@+id/login_progress"
-                    style="?android:attr/progressBarStyleLarge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_gravity="center"
-                    android:visibility="gone" />
-
             </LinearLayout>
 
-        </ScrollView>
+        </android.support.v4.widget.NestedScrollView>
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

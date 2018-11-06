@@ -9,6 +9,7 @@ class HomePresenter (var context: Context?,
 
     override fun saveMyPass(categoria: String, hora: String, senha: String) {
 
+        GetSenhas.saveMyPassInList(categoria, hora, senha, context)
 
 
     }

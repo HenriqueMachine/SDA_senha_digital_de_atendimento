@@ -20,6 +20,12 @@ import kotlinx.android.synthetic.main.activity_menu.*
 
 class BottomNavigationActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
 
+    companion object {
+
+        var minhaSenha = false
+
+    }
+
     private var content: FrameLayout? = null
 
     private var controlInflate:Int? = null
@@ -105,9 +111,17 @@ class BottomNavigationActivity : AppCompatActivity(),NavigationView.OnNavigation
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        minhaSenha = false
+
         var view = findViewById<BottomNavigationView>(R.id.navigation)
 
         view.menu.getItem(2).isChecked = true
+
+        if (minhaSenha){
+
+            view.menu.getItem(3).isChecked = true
+
+        }
 
         content = findViewById(R.id.content) as FrameLayout
         val navigation = findViewById(R.id.navigation) as BottomNavigationView

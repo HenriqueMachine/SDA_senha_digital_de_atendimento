@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.senhadigitaldeatendimento.R
-import com.senhadigitaldeatendimento.Support.Utils.GetSenhas
+import com.senhadigitaldeatendimento.Support.Utils.CustomDialogSenha
+import kotlinx.android.synthetic.main.fragment_minhasenha.*
+
 class MyPassFragment : Fragment(), MyPassContract.UserView {
 
     private val presenter : MyPassContract.UserActionsListener<MyPassContract.UserView> by lazy {
@@ -17,12 +19,48 @@ class MyPassFragment : Fragment(), MyPassContract.UserView {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-
-        presenter.getMyPass()
 
         return inflater.inflate(R.layout.fragment_minhasenha, container, false)
 
     }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        presenter.getMinhaSenha()
+
+        button_cancelar_senha.setOnClickListener {
+
+            CustomDialogSenha(this.context!!).showDialogDefault("Atenção",
+                    "Deseja cancelar está senha?\nEste processo não pode ser desfeito.",
+                    object : CustomDialogSenha.onClickListenerDefault{
+                        override fun yes() {
+
+                            textview_desc_mypass?.text = ""
+                            textview_desc_categoria_mypass?.text = ""
+                            textview_desc_horario_mypass?.text = ""
+
+                        }
+
+                        override fun no() {
+
+
+                        }
+
+                    })
+
+        }
+
+    }
+
+    override fun obterMinhaSenha(senha: String, categoria: String, hora: String) {
+
+        textview_desc_mypass?.text = hora
+        textview_desc_categoria_mypass?.text = categoria
+        textview_desc_horario_mypass?.text = senha
+
+
+    }
+
 
 }

@@ -1,19 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.MinhaSenha.MyPassFragment">
+    android:orientation="vertical"
+    tools:context=".View.MinhaSenha.MyPassFragment"
+    android:padding="@dimen/dimen16">
 
-    <TextView
-        android:id="@+id/textViewHome"
+    <LinearLayout
+        android:id="@+id/senha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title_mypassword"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/dimen8"
+        android:padding="@dimen/dimen8"
         android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
-        android:drawableTop="@drawable/ic_launcher_background"/>
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_button_with_radius">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview_describe_senha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen8"
+                android:padding="@dimen/dimen8"
+                android:textColor="@color/colorAccent"
+                android:text="Senha"
+                android:textSize="18sp"
+                fontPath="fonts/WorkSans-Medium.ttf"
+                tools:ignore="MissingPrefix"/>
+
+            <TextView
+                android:id="@+id/textview_describe_categoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen8"
+                android:text="Categoria"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"
+                android:padding="@dimen/dimen8"
+                fontPath="fonts/WorkSans-Medium.ttf"
+                tools:ignore="MissingPrefix"/>
+
+            <TextView
+                android:id="@+id/textview_describe_horario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen8"
+                android:text="Horário"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"
+                android:padding="@dimen/dimen8"
+                fontPath="fonts/WorkSans-Medium.ttf"
+                tools:ignore="MissingPrefix"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview_desc_mypass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:padding="@dimen/dimen8"
+
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"
+                android:layout_marginTop="@dimen/dimen8"
+
+                android:gravity="center"
+                fontPath="fonts/WorkSans-Medium.ttf"
+                tools:ignore="MissingPrefix"/>
+            <TextView
+                android:id="@+id/textview_desc_categoria_mypass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimen8"
+
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dimen8"
+
+                fontPath="fonts/WorkSans-Medium.ttf"
+                tools:ignore="MissingPrefix"/>
+            <TextView
+                android:id="@+id/textview_desc_horario_mypass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimen8"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="@dimen/dimen8"
+                android:gravity="center"
+                fontPath="fonts/WorkSans-Medium.ttf"
+                tools:ignore="MissingPrefix"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_cancelar_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen16"
+        android:background="@drawable/shapebuttonstrokered"
+        android:textColor="@color/colorAccentRED"
+        android:text="CANCELAR"
+        android:layout_below="@+id/senha"
+        />
 
 </RelativeLayout>
