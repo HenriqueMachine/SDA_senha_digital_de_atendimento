@@ -1,14 +1,7 @@
 package com.senhadigitaldeatendimento.View.Register
 
-import android.annotation.SuppressLint
-import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
-import android.support.v4.content.ContextCompat.getColor
-import android.util.AttributeSet
-import android.util.Log
-import android.view.View
 import br.com.ipiranga.profrotas.Support.Util.MaskEditUtil
 import com.senhadigitaldeatendimento.R
 import com.senhadigitaldeatendimento.Support.Utils.CustomDialogSenha
@@ -46,7 +39,7 @@ class RegisterActivity : AppCompatActivity(), RegisterContract.UserView {
 
         numero_telefone.addTextChangedListener(MaskEditUtil.mask(numero_telefone,MaskEditUtil.FORMAT_FONE))
 
-        button_cadastrar.setOnClickListener {
+        button_cadastrar_cad.setOnClickListener {
 
             nomeUser = nome.text.toString()
 
@@ -75,7 +68,7 @@ class RegisterActivity : AppCompatActivity(), RegisterContract.UserView {
 
             }
 
-
+            presenter.saveUser(nomeUser!!, cpfUser!!, dataUser!!, telefoneUser!!, emailUser!!)
 
         }
 

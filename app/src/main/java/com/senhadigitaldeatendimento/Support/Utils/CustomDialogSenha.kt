@@ -48,6 +48,8 @@ class CustomDialogSenha(var context:Context){
 
     fun showDialogDefault(tittle: String, msg: String, listern: onClickListenerDefault){
 
+        dialog = Dialog(context)
+
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog?.window?.clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
                 WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM)
@@ -73,6 +75,8 @@ class CustomDialogSenha(var context:Context){
     }
 
     fun showDialogDefaultError(tittle: String, msg: String, listern: onClickListenerError){
+
+        dialog = Dialog(context)
 
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog?.window?.clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or

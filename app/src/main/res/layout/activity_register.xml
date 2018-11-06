@@ -219,7 +219,7 @@
 
 
                 <Button
-                    android:id="@+id/button_cadastrar"
+                    android:id="@+id/button_cadastrar_cad"
                     android:background="@drawable/shapebuttonstroke"
                     android:textColor="@color/colorAccent"
                     android:layout_width="match_parent"

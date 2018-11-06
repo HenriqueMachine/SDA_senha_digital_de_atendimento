@@ -12,6 +12,7 @@ interface RegisterContract {
 
     interface UserActionsListener < T : View> : Presenter<T> {
 
+        fun saveUser(nome:String, cpf:String, dataNascimento:String, telefone:String, email:String)
 
     }
 
